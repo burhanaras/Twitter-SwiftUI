@@ -11,8 +11,8 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             
-            FeedView(tweets: DummyData.dummyData(count: 10).map { Post.fromDTO(dto: $0)})
-            
+            FeedView(viewModel: FeedViewModel(networkLayer: InMemoryNetworkLayer()))
+ 
             VStack {
               Spacer()
               HStack {

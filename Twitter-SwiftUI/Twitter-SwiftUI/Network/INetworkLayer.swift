@@ -18,6 +18,10 @@ class InMemoryNetworkLayer: INetworkLayer {
     
     private var data = [PostDTO]()
     
+    init() {
+        self.data += DummyData.dummyData(count: 3)
+    }
+    
     func getUsers() -> AnyPublisher<[UserDTO], RequestError> {
         return Result<[UserDTO], RequestError>
             .Publisher(.success(DummyData.dummyUsers()))

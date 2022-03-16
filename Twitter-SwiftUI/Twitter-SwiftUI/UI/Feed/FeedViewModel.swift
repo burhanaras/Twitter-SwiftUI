@@ -41,11 +41,10 @@ class FeedViewModel: ObservableObject {
                 receiveValue: { [unowned self] usersResponse, postsResponse in
                     print("\(usersResponse.count) users downloaded.")
                     self.users = usersResponse.map { User.fromDTO(dto: $0) }
-                    self.currentUser = users[0]
                     
                     print("\(postsResponse.count) posts downloaded")
                     self.allPosts = postsResponse.map { Post.fromDTO(dto: $0)}
-                    filter(userName: users[0].username)
+                    filter(userName: users[1].username)
                 }
             )
     }

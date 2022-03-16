@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct FeedView: View {
-    let tweets: [Post]
-    let viewModel: FeedViewModel = FeedViewModel(networkLayer: InMemoryNetworkLayer())
+    @ObservedObject var viewModel: FeedViewModel
     
     var body: some View {
         NavigationView {
-            List(tweets) { tweet in
+            List(viewModel.posts) { tweet in
                 TweetView(tweet: tweet)
             }
             .listStyle(PlainListStyle())
@@ -133,7 +132,7 @@ struct NewTweetButton: View {
 
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedView(tweets: DummyData.dummyData(count: 10).map { Post.fromDTO(dto: $0)})
+        FeedView(viewModel: FeedViewModel(networkLayer: DummyNetworkLayer()))
         TweetView(tweet: Post.fromDTO(dto: DummyData.dummyData(count: 1)[0]))
     }
 }
