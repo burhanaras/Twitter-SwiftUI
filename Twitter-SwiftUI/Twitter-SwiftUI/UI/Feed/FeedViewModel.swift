@@ -63,6 +63,9 @@ class FeedViewModel: ObservableObject {
                 print(postResponse)
             }
             .store(in: &cancellables)
+        
+        self.allPosts.insert(post, at: 0)
+        self.posts.insert(post, at: 0)
     }
     
     func filter(userName: String) {

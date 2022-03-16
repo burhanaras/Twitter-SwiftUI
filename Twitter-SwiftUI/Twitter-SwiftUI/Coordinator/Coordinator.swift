@@ -8,7 +8,15 @@
 import Foundation
 
 final class Coordinator {
+    
+    private static var networkLayer = InMemoryNetworkLayer()
+    private static var viewModel = FeedViewModel(networkLayer: networkLayer)
+    
     static func feedView() -> FeedView {
-        return FeedView(viewModel: FeedViewModel(networkLayer: InMemoryNetworkLayer()))
+        return FeedView(viewModel: viewModel)
+    }
+    
+    static func newTweetButton() -> NewTweetButton {
+        return NewTweetButton(viewModel: viewModel)
     }
 }

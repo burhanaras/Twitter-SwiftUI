@@ -117,8 +117,12 @@ struct TweetActionsView: View {
 }
 
 struct NewTweetButton: View {
+    @ObservedObject var viewModel: FeedViewModel
+    
     var body: some View {
-        Button(action: {}) {
+        Button(action: {
+            viewModel.post(text: "Bismillah")
+        }) {
             Image(systemName: "pencil")
                 .font(.largeTitle)
                 .foregroundColor(.white)

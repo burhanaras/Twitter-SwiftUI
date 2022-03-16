@@ -17,7 +17,7 @@ struct ContentView: View {
               Spacer()
               HStack {
                 Spacer()
-                NewTweetButton()
+                  Coordinator.newTweetButton()
                   .padding(.bottom, 24)
                   .padding(.trailing)
               }
