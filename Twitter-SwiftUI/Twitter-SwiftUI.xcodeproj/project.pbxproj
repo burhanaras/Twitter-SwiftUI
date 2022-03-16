@@ -17,6 +17,9 @@
 		9453377B27E278A700AAAD5C /* INetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453377A27E278A700AAAD5C /* INetworkLayer.swift */; };
 		9453377D27E278DE00AAAD5C /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453377C27E278DE00AAAD5C /* DummyData.swift */; };
 		9453377F27E2794800AAAD5C /* DummyNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453377E27E2794800AAAD5C /* DummyNetworkLayer.swift */; };
+		9453378427E27A0B00AAAD5C /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453378327E27A0B00AAAD5C /* FeedView.swift */; };
+		9453378627E27A2100AAAD5C /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453378527E27A2100AAAD5C /* CreatePostView.swift */; };
+		9453378827E27A3000AAAD5C /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453378727E27A3000AAAD5C /* FeedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		9453377A27E278A700AAAD5C /* INetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INetworkLayer.swift; sourceTree = "<group>"; };
 		9453377C27E278DE00AAAD5C /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		9453377E27E2794800AAAD5C /* DummyNetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNetworkLayer.swift; sourceTree = "<group>"; };
+		9453378327E27A0B00AAAD5C /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		9453378527E27A2100AAAD5C /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
+		9453378727E27A3000AAAD5C /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,7 @@
 		9453376127E276A300AAAD5C /* Twitter-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				9453378227E279C200AAAD5C /* Coordinator */,
 				9453377327E277CC00AAAD5C /* Model */,
 				9453377227E277BF00AAAD5C /* Network */,
 				9453377127E277B700AAAD5C /* UI */,
@@ -95,6 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				9453376427E276A300AAAD5C /* ContentView.swift */,
+				9453378027E279A300AAAD5C /* Feed */,
+				9453378127E279AA00AAAD5C /* Create Post */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -115,6 +124,30 @@
 				9453377627E2784000AAAD5C /* DTOs.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		9453378027E279A300AAAD5C /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				9453378327E27A0B00AAAD5C /* FeedView.swift */,
+				9453378727E27A3000AAAD5C /* FeedViewModel.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		9453378127E279AA00AAAD5C /* Create Post */ = {
+			isa = PBXGroup;
+			children = (
+				9453378527E27A2100AAAD5C /* CreatePostView.swift */,
+			);
+			path = "Create Post";
+			sourceTree = "<group>";
+		};
+		9453378227E279C200AAAD5C /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,9 +220,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9453378627E27A2100AAAD5C /* CreatePostView.swift in Sources */,
 				9453377B27E278A700AAAD5C /* INetworkLayer.swift in Sources */,
+				9453378427E27A0B00AAAD5C /* FeedView.swift in Sources */,
 				9453377527E2781100AAAD5C /* Models.swift in Sources */,
 				9453377927E2787300AAAD5C /* RequestError.swift in Sources */,
+				9453378827E27A3000AAAD5C /* FeedViewModel.swift in Sources */,
 				9453377D27E278DE00AAAD5C /* DummyData.swift in Sources */,
 				9453376527E276A300AAAD5C /* ContentView.swift in Sources */,
 				9453377F27E2794800AAAD5C /* DummyNetworkLayer.swift in Sources */,
