@@ -14,6 +14,8 @@
 		9453377527E2781100AAAD5C /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453377427E2781100AAAD5C /* Models.swift */; };
 		9453377727E2784000AAAD5C /* DTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453377627E2784000AAAD5C /* DTOs.swift */; };
 		9453377927E2787300AAAD5C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453377827E2787300AAAD5C /* RequestError.swift */; };
+		9453377B27E278A700AAAD5C /* INetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453377A27E278A700AAAD5C /* INetworkLayer.swift */; };
+		9453377D27E278DE00AAAD5C /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453377C27E278DE00AAAD5C /* DummyData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		9453377427E2781100AAAD5C /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		9453377627E2784000AAAD5C /* DTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTOs.swift; sourceTree = "<group>"; };
 		9453377827E2787300AAAD5C /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		9453377A27E278A700AAAD5C /* INetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INetworkLayer.swift; sourceTree = "<group>"; };
+		9453377C27E278DE00AAAD5C /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				9453376927E276A500AAAD5C /* Preview Assets.xcassets */,
+				9453377C27E278DE00AAAD5C /* DummyData.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -95,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				9453377827E2787300AAAD5C /* RequestError.swift */,
+				9453377A27E278A700AAAD5C /* INetworkLayer.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -178,8 +184,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9453377B27E278A700AAAD5C /* INetworkLayer.swift in Sources */,
 				9453377527E2781100AAAD5C /* Models.swift in Sources */,
 				9453377927E2787300AAAD5C /* RequestError.swift in Sources */,
+				9453377D27E278DE00AAAD5C /* DummyData.swift in Sources */,
 				9453376527E276A300AAAD5C /* ContentView.swift in Sources */,
 				9453376327E276A300AAAD5C /* Twitter_SwiftUIApp.swift in Sources */,
 				9453377727E2784000AAAD5C /* DTOs.swift in Sources */,
