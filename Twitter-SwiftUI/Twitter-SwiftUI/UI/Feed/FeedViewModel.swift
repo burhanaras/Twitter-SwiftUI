@@ -20,6 +20,7 @@ class FeedViewModel: ObservableObject {
     
     init(networkLayer: INetworkLayer){
         self.networkLayer = networkLayer
+        loadData()
     }
     
     func loadData() {
@@ -69,6 +70,8 @@ class FeedViewModel: ObservableObject {
         if let matchingUser = users.filter { $0.username == userName}.first {
             self.currentUser = matchingUser
             self.posts = allPosts.filter { $0.username == currentUser.username}
+            print("Current user is \(currentUser.name)")
+            print("Posts count is \(self.posts.count)")
         }
     }
     

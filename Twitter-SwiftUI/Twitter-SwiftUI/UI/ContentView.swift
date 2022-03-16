@@ -9,8 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            
+            FeedView(tweets: DummyData.dummyData(count: 10).map { Post.fromDTO(dto: $0)})
+            
+            VStack {
+              Spacer()
+              HStack {
+                Spacer()
+                NewTweetButton()
+                  .padding(.bottom, 24)
+                  .padding(.trailing)
+              }
+            }
+            
+        }
     }
 }
 
