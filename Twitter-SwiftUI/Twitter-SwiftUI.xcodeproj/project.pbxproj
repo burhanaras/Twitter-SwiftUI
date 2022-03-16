@@ -20,6 +20,7 @@
 		9453378427E27A0B00AAAD5C /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453378327E27A0B00AAAD5C /* FeedView.swift */; };
 		9453378627E27A2100AAAD5C /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453378527E27A2100AAAD5C /* CreatePostView.swift */; };
 		9453378827E27A3000AAAD5C /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453378727E27A3000AAAD5C /* FeedViewModel.swift */; };
+		9453378B27E27E5200AAAD5C /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453378A27E27E5200AAAD5C /* Resources.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		9453378327E27A0B00AAAD5C /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		9453378527E27A2100AAAD5C /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
 		9453378727E27A3000AAAD5C /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		9453378A27E27E5200AAAD5C /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		9453376127E276A300AAAD5C /* Twitter-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				9453378927E27E4700AAAD5C /* Resources */,
 				9453378227E279C200AAAD5C /* Coordinator */,
 				9453377327E277CC00AAAD5C /* Model */,
 				9453377227E277BF00AAAD5C /* Network */,
@@ -150,6 +153,14 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		9453378927E27E4700AAAD5C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9453378A27E27E5200AAAD5C /* Resources.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -229,6 +240,7 @@
 				9453377D27E278DE00AAAD5C /* DummyData.swift in Sources */,
 				9453376527E276A300AAAD5C /* ContentView.swift in Sources */,
 				9453377F27E2794800AAAD5C /* DummyNetworkLayer.swift in Sources */,
+				9453378B27E27E5200AAAD5C /* Resources.swift in Sources */,
 				9453376327E276A300AAAD5C /* Twitter_SwiftUIApp.swift in Sources */,
 				9453377727E2784000AAAD5C /* DTOs.swift in Sources */,
 			);
