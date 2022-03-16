@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9435EC7B27E2895700FF6F76 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9435EC7A27E2895700FF6F76 /* Coordinator.swift */; };
 		9453376327E276A300AAAD5C /* Twitter_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453376227E276A300AAAD5C /* Twitter_SwiftUIApp.swift */; };
 		9453376527E276A300AAAD5C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453376427E276A300AAAD5C /* ContentView.swift */; };
 		9453376727E276A500AAAD5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9453376627E276A500AAAD5C /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9435EC7A27E2895700FF6F76 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		9453375F27E276A300AAAD5C /* Twitter-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9453376227E276A300AAAD5C /* Twitter_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twitter_SwiftUIApp.swift; sourceTree = "<group>"; };
 		9453376427E276A300AAAD5C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		9453378227E279C200AAAD5C /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				9435EC7A27E2895700FF6F76 /* Coordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			files = (
 				9453378627E27A2100AAAD5C /* CreatePostView.swift in Sources */,
 				9453377B27E278A700AAAD5C /* INetworkLayer.swift in Sources */,
+				9435EC7B27E2895700FF6F76 /* Coordinator.swift in Sources */,
 				9453378427E27A0B00AAAD5C /* FeedView.swift in Sources */,
 				9453377527E2781100AAAD5C /* Models.swift in Sources */,
 				9453377927E2787300AAAD5C /* RequestError.swift in Sources */,

@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             
-            FeedView(viewModel: FeedViewModel(networkLayer: InMemoryNetworkLayer()))
+            Coordinator.feedView()
  
             VStack {
               Spacer()
