@@ -16,6 +16,7 @@
 		9453377927E2787300AAAD5C /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453377827E2787300AAAD5C /* RequestError.swift */; };
 		9453377B27E278A700AAAD5C /* INetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453377A27E278A700AAAD5C /* INetworkLayer.swift */; };
 		9453377D27E278DE00AAAD5C /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453377C27E278DE00AAAD5C /* DummyData.swift */; };
+		9453377F27E2794800AAAD5C /* DummyNetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9453377E27E2794800AAAD5C /* DummyNetworkLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		9453377827E2787300AAAD5C /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		9453377A27E278A700AAAD5C /* INetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INetworkLayer.swift; sourceTree = "<group>"; };
 		9453377C27E278DE00AAAD5C /* DummyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
+		9453377E27E2794800AAAD5C /* DummyNetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyNetworkLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			children = (
 				9453376927E276A500AAAD5C /* Preview Assets.xcassets */,
 				9453377C27E278DE00AAAD5C /* DummyData.swift */,
+				9453377E27E2794800AAAD5C /* DummyNetworkLayer.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				9453377927E2787300AAAD5C /* RequestError.swift in Sources */,
 				9453377D27E278DE00AAAD5C /* DummyData.swift in Sources */,
 				9453376527E276A300AAAD5C /* ContentView.swift in Sources */,
+				9453377F27E2794800AAAD5C /* DummyNetworkLayer.swift in Sources */,
 				9453376327E276A300AAAD5C /* Twitter_SwiftUIApp.swift in Sources */,
 				9453377727E2784000AAAD5C /* DTOs.swift in Sources */,
 			);
