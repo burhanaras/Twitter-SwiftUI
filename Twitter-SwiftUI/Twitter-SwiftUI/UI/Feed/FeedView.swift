@@ -12,38 +12,47 @@ struct FeedView: View {
     
     var body: some View {
         NavigationView {
-            List(viewModel.posts) { tweet in
-                TweetView(tweet: tweet)
-            }
-            .listStyle(PlainListStyle())
-            .navigationBarTitle("Twitter", displayMode: .inline)
-            .navigationBarItems(
-                trailing:
-                    Menu(content: {
-                        
-                        ForEach(viewModel.users) { user in
-                            Button(action: {
-                                viewModel.switchToUser(user: user)
-                            }) {
-                                HStack {
-                                    Image(systemName: user.image)
-                                        .foregroundColor(.twitterBlue)
-                                    Text("\(user.name)").font(.footnote)
+            ZStack {
+                List(viewModel.posts) { tweet in
+                    TweetView(tweet: tweet)
+                }
+                .listStyle(PlainListStyle())
+                .navigationBarTitle("Twitter", displayMode: .inline)
+                .navigationBarItems(
+                    trailing:
+                        Menu(content: {
+                            
+                            ForEach(viewModel.users){ user in
+                                Button(action: {
+                                    viewModel.switchToUser(user: user)
+                                }) {
+                                    HStack {
+                                        Image(systemName: user.image)
+                                            .foregroundColor(.twitterBlue)
+                                        Text("\(user.name)").font(.footnote)
+                                    }
                                 }
                             }
-                        }
-                        
-                    }, label: {
-                        Button(action: {}) {
-                            VStack {
-                                Image(systemName: viewModel.currentUser.image)
-                                    .foregroundColor(.twitterBlue)
-                                Text("\(viewModel.currentUser.name)")
-                                    .font(.system(size: 9))
+                            
+                        }, label: {
+                            Button(action: {}) {
+                                VStack {
+                                    Image(systemName: viewModel.currentUser.image)
+                                        .foregroundColor(.twitterBlue)
+                                    Text("\(viewModel.currentUser.name)")
+                                        .font(.system(size: 9))
+                                }
                             }
-                        }
-                    })
-            )
+                        })
+                )
+                
+                
+                if !viewModel.errorMessage.isEmpty {
+                    Text(viewModel.errorMessage)
+                        .padding()
+                }
+            }
+            
         }
     }
 }
@@ -134,6 +143,9 @@ struct NewTweetButton: View {
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
         FeedView(viewModel: FeedViewModel(networkLayer: DummyNetworkLayer()))
+        FeedView(viewModel: FeedViewModel(networkLayer: DummyNetworkLayer()))
+            .colorScheme(.dark)
+        FeedView(viewModel: FeedViewModel(networkLayer: DummyFailingNetworkLayer()))
         TweetView(tweet: Post.fromDTO(dto: DummyData.dummyData(count: 1)[0]))
     }
 }

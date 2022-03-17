@@ -18,8 +18,8 @@ class InMemoryNetworkLayer: INetworkLayer {
     
     private var data = [PostDTO]()
     
-    init() {
-        self.data += DummyData.dummyData(count: 3)
+    init(initialData: [PostDTO] = []) {
+        self.data += initialData
     }
     
     func getUsers() -> AnyPublisher<[UserDTO], RequestError> {

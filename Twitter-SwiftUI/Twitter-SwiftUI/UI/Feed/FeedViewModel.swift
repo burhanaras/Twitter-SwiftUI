@@ -15,8 +15,7 @@ class FeedViewModel: ObservableObject {
     @Published private(set) var currentUser = User.fromDTO(dto: DummyData.dummyUsers()[0])
     
     @Published var textToTweet = ""
-    
-    private var allPosts = [Post]()
+    @Published var errorMessage = ""
     
     private var cancellables: Set<AnyCancellable> = []
     private var networkLayer: INetworkLayer = InMemoryNetworkLayer()
@@ -39,6 +38,7 @@ class FeedViewModel: ObservableObject {
                         break
                     case let .failure(error):
                         print("ERROR Here: \(error.localizedDescription)")
+                        self.errorMessage = error.localizedDescription
                     }
                 },
                 receiveValue: { [unowned self] usersResponse, postsResponse in
@@ -47,8 +47,7 @@ class FeedViewModel: ObservableObject {
                     self.currentUser = self.users[0]
                     
                     print("\(postsResponse.count) posts downloaded")
-                    self.allPosts = postsResponse.map { Post.fromDTO(dto: $0)}
-                    self.posts = self.allPosts
+                    self.posts = postsResponse.map { Post.fromDTO(dto: $0)}
                 }
             )
     }
@@ -69,7 +68,6 @@ class FeedViewModel: ObservableObject {
             }
             .store(in: &cancellables)
         
-        self.allPosts.insert(post, at: 0)
         self.posts.insert(post, at: 0)
     }
     

@@ -9,7 +9,7 @@ import Foundation
 
 final class Coordinator {
     
-    private static var networkLayer = InMemoryNetworkLayer()
+    private static var networkLayer = InMemoryNetworkLayer(initialData: DummyData.dummyData(count: 3))
     private static var viewModel = FeedViewModel(networkLayer: networkLayer)
     
     static func feedView() -> FeedView {

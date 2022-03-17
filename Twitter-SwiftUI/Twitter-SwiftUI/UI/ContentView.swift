@@ -21,7 +21,6 @@ struct ContentView: View {
                 Spacer()
                   Coordinator.newTweetButton(action: {
                       showComposeTweetSheet = true
-                      //viewModel.post(text: "Bismillah")
                   })
                   .padding(.bottom, 24)
                   .padding(.trailing)
