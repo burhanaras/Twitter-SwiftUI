@@ -9,4 +9,6 @@ On network layer, I've used protocol oriented approach. so that I can create moc
 
 To make SwiftUI Live Preview work, I also use a mock version of network that returns dummy data.
 
-Unit tests are written to test successful data, network failure and mapping from DTO to model objects. 
+Unit tests are written to test successful data, network failure and mapping from DTO to model objects.
+
+![](screen.gif) 
