@@ -16,7 +16,11 @@ final class Coordinator {
         return FeedView(viewModel: viewModel)
     }
     
-    static func newTweetButton() -> NewTweetButton {
-        return NewTweetButton(viewModel: viewModel)
+    static func newTweetButton(action: @escaping () -> Void) -> NewTweetButton {
+        return NewTweetButton(viewModel: viewModel, action: action)
+    }
+    
+    static func createPostView() -> CreatePostView {
+        return CreatePostView(viewModel: viewModel)
     }
 }

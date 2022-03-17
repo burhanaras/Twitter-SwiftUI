@@ -23,7 +23,7 @@ struct FeedView: View {
                         
                         ForEach(viewModel.users) { user in
                             Button(action: {
-                                viewModel.filter(userName: user.username)
+                                viewModel.switchToUser(user: user)
                             }) {
                                 HStack {
                                     Image(systemName: user.image)
@@ -32,8 +32,6 @@ struct FeedView: View {
                                 }
                             }
                         }
-                        
-                        
                         
                     }, label: {
                         Button(action: {}) {
@@ -118,11 +116,10 @@ struct TweetActionsView: View {
 
 struct NewTweetButton: View {
     @ObservedObject var viewModel: FeedViewModel
+    var action: () -> Void
     
     var body: some View {
-        Button(action: {
-            viewModel.post(text: "Bismillah")
-        }) {
+        Button(action: action) {
             Image(systemName: "pencil")
                 .font(.largeTitle)
                 .foregroundColor(.white)

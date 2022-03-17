@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showComposeTweetSheet = false
+    
     var body: some View {
         ZStack {
             
@@ -17,13 +19,22 @@ struct ContentView: View {
               Spacer()
               HStack {
                 Spacer()
-                  Coordinator.newTweetButton()
+                  Coordinator.newTweetButton(action: {
+                      showComposeTweetSheet = true
+                      //viewModel.post(text: "Bismillah")
+                  })
                   .padding(.bottom, 24)
                   .padding(.trailing)
               }
             }
             
         }
+        .sheet(isPresented: $showComposeTweetSheet) {
+            
+        } content: {
+            Coordinator.createPostView()
+        }
+
     }
 }
 

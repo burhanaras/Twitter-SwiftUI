@@ -13,6 +13,9 @@ class FeedViewModel: ObservableObject {
     @Published private(set) var users = [User]()
     @Published private(set) var posts = [Post]()
     @Published private(set) var currentUser = User.fromDTO(dto: DummyData.dummyUsers()[0])
+    
+    @Published var textToTweet = ""
+    
     private var allPosts = [Post]()
     
     private var cancellables: Set<AnyCancellable> = []
@@ -41,20 +44,22 @@ class FeedViewModel: ObservableObject {
                 receiveValue: { [unowned self] usersResponse, postsResponse in
                     print("\(usersResponse.count) users downloaded.")
                     self.users = usersResponse.map { User.fromDTO(dto: $0) }
+                    self.currentUser = self.users[0]
                     
                     print("\(postsResponse.count) posts downloaded")
                     self.allPosts = postsResponse.map { Post.fromDTO(dto: $0)}
-                    filter(userName: users[1].username)
+                    self.posts = self.allPosts
                 }
             )
     }
     
-    func post(text: String) {
-        let post = Post(id: UUID().uuidString, username: currentUser.username, name: currentUser.name, image: currentUser.image, text: text)
+    func post() {
+        let post = Post(id: UUID().uuidString, username: currentUser.username, name: currentUser.name, image: currentUser.image, text: self.textToTweet)
         networkLayer.post(user: self.currentUser, post: post)
             .sink { completion in
                 switch completion {
                 case .finished:
+                    self.textToTweet = ""
                     break
                 case let .failure(error):
                     print(error.localizedDescription)
@@ -68,13 +73,7 @@ class FeedViewModel: ObservableObject {
         self.posts.insert(post, at: 0)
     }
     
-    func filter(userName: String) {
-        if let matchingUser = users.filter { $0.username == userName}.first {
-            self.currentUser = matchingUser
-            self.posts = allPosts.filter { $0.username == currentUser.username}
-            print("Current user is \(currentUser.name)")
-            print("Posts count is \(self.posts.count)")
-        }
+    func switchToUser(user: User) {
+        self.currentUser = user
     }
-    
 }
