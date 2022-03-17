@@ -3,6 +3,7 @@
 Just a small replicate of Twitter. Clean Code + Unit Tests.
 
 **Architecture:** MVVM-C. Because it's a small app. This architecture is much practical.
+
 **Used Frameworks:** SwiftUI + Combine
 
 On network layer, I've used protocol oriented approach. so that I can create mocked versions of network that returns dummy data.
