@@ -84,13 +84,77 @@ class Unit_Tests: XCTestCase {
         let sut = FeedViewModel(networkLayer: networkLayer)
         let postMessage = "This is a test message"
         
-        // WHEN: FeedViewModel' is created
+        // WHEN: a new tweet is posted
         sut.textToTweet = postMessage
         sut.post()
         
-        // THEN: FeedViewModel's data should be same as network data
+        // THEN: there must be only 1 message.
         XCTAssertEqual(sut.posts.count, 1)
         XCTAssertEqual(sut.posts[0].text, postMessage)
+    }
+    
+    func test_FedViewModel_should_show_new_post_at_the_top_when_a_new_message_is_posted(){
+        // GIVEN: that we have a network layer that returns empty posts
+        let posts = makePostsData(count: 5)
+        let networkLayer: INetworkLayer = InMemoryNetworkLayer(initialData: posts)
+        let sut = FeedViewModel(networkLayer: networkLayer)
+        let postMessage = "This is a test message"
+        
+        // WHEN: a new tweet is posted
+        sut.textToTweet = postMessage
+        sut.post()
+        
+        // THEN: message count should be incremented 1. And new tweet must be at index 0
+        XCTAssertEqual(sut.posts.count, posts.count + 1)
+        XCTAssertEqual(sut.posts[0].text, postMessage)
+        XCTAssertEqual(sut.posts[0].username, sut.currentUser.username)
+    }
+    
+    func test_FedViewModel_when_switched_to_new_user_new_posts_username_should_be_correct(){
+        // GIVEN: that we have a network layer that returns empty posts
+        let networkLayer: INetworkLayer = InMemoryNetworkLayer()
+        let sut = FeedViewModel(networkLayer: networkLayer)
+        let postMessage = "This is a test message"
+        let currentUser = User.fromDTO(dto: makeUsersData()[1])
+        
+        // WHEN: switched to a new user and then posted a tweet
+        sut.switchToUser(user: currentUser)
+        sut.textToTweet = postMessage
+        sut.post()
+        
+        // THEN: new tweet's username must be equal to currentuser. also there must be only 1 message.
+        XCTAssertEqual(sut.posts.count, 1)
+        XCTAssertEqual(sut.posts[0].text, postMessage)
+        XCTAssertEqual(sut.posts[0].username, currentUser.username)
+        XCTAssertEqual(sut.currentUser.username, currentUser.username)
+    }
+    
+    func test_mapping_from_PostDTO_to_Post_model_should_be_correct() {
+        // GIVEN: that we have a PostDTO
+        let dto = makePostsData(count: 1)[0]
+        
+        // WHEN: dto is converted to model object
+        let sut = Post.fromDTO(dto: dto)
+        
+        // THEN: we expect fields to be same
+        XCTAssertEqual(sut.username, dto.user.username)
+        XCTAssertEqual(sut.text, dto.text)
+        XCTAssertEqual(sut.name, dto.user.name)
+        XCTAssertEqual(sut.image, dto.user.image)
+    }
+    
+    func test_mapping_from_UserDTO_to_User_model_should_be_correct() {
+        // GIVEN: that we have a UserDTO
+        let dto = makeUsersData()[0]
+        
+        // WHEN: dto is converted to model object
+        let sut = User.fromDTO(dto: dto)
+        
+        // THEN: we expect fields to be same
+        XCTAssertEqual(sut.username, dto.username)
+        XCTAssertEqual(sut.image, dto.image)
+        XCTAssertEqual(sut.name, dto.name)
+        XCTAssertEqual(sut.id, dto.id)
     }
     
 }
